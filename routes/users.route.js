@@ -27,14 +27,6 @@ router.post("/signup", async (req, res) => {
       });
       return;
     }
-    //닉네임 기데이터 중복 검사
-    const existsUsers = await Users.findOne({ nickname });
-    if (existsUsers) {
-      res.status(412).json({
-        errorMessage: "중복된 닉네임입니다.",
-      });
-      return;
-    }
     //패스워드 일치 검사
     if (password !== confirmPassword) {
       res.status(412).json({
