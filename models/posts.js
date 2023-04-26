@@ -1,13 +1,13 @@
-'use strict';
-const { Model } = require('sequelize');
+//연결고리
+"use strict";
+const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class Posts extends Model {
-    
     static associate(models) {
-    //user와 1:N관계
+      //user와 1:N관계
       this.belongsTo(models.Users, {
-        targetKey: 'userId',
-        foreignKey: 'UserId',
+        targetKey: "userId",
+        foreignKey: "UserId",
       });
     }
   }
@@ -49,7 +49,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       sequelize,
-      modelName: 'Posts',
+      modelName: "Posts",
     }
   );
   return Posts;

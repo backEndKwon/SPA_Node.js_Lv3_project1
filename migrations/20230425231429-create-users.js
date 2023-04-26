@@ -12,7 +12,7 @@ module.exports = {
       nickname: {
         type: Sequelize.STRING,
         allowNull: false, // NOT NULL
-        unique : true,
+        unique: true,
       },
       password: {
         type: Sequelize.STRING,
